@@ -21,3 +21,149 @@ FROM tabProject p
 JOIN tabadi_customer_traffic ct
 WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
 AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +1, '%y%m%d-1') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_2_1 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +1, '%y%m%d-2') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_2_2 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +1, '%y%m%d-3') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_2_3 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +2, '%y%m%d-1') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_3_1 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +2, '%y%m%d-2') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_3_2 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +2, '%y%m%d-3') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_3_3 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +3, '%y%m%d-1') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_4_1 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +3, '%y%m%d-2') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_4_2 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +3, '%y%m%d-3') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_4_3 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +4, '%y%m%d-1') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_5_1 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +4, '%y%m%d-2') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_5_2 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +4, '%y%m%d-3') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_5_3 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +5, '%y%m%d-1') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_6_1 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +5, '%y%m%d-2') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_6_2 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +5, '%y%m%d-3') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_6_3 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +6, '%y%m%d-1') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_7_1 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +6, '%y%m%d-2') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_7_2 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+UNION ALL
+SELECT ct.customer, DATE_FORMAT(STR_TO_DATE(p.project_name, '%y%m%d') +6, '%y%m%d-3') as timeslot, 
+LEFT(zone, 3) AS zone, 'zAdi_tvo' AS media_type, 
+pct_viewing * avg_viewing_mins * 0.6667 * traffic_7_3 AS imps
+FROM tabProject p
+JOIN tabadi_customer_traffic ct
+WHERE STR_TO_DATE(p.project_name, '%y%m%d') BETWEEN ct.valid_from AND ct.valid_to
+AND p.project_type = 'Week'
+
+
